@@ -5,7 +5,7 @@ import './Style.css'
 const MenuBar = ({listcategory,onChangeCategory}) => {
     return (
         <div className="ui menu menu-bar">
-            <a href="#" className="item"> 
+            <a href="" className="item button"> 
                 Trang chủ
             </a>
             <DropDown onChangeCategory={onChangeCategory} listcategory={listcategory}/>

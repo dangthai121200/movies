@@ -5,7 +5,7 @@ const MovieItem = ({movie,onMovieClick}) => {
     return (
         <div   className="movie-item ui card " onClick={()=>onMovieClick(movie)}>
             <div className="image">
-                <img style={{height:'300px'}} src={movie.imageUrl}/>
+                <img alt="ảnh" style={{height:'300px'}} src={movie.imageUrl}/>
             </div>
             <div className="content">
                 <div className="header">
