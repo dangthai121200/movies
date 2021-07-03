@@ -3,9 +3,9 @@ import './Style.css';
 
 const MovieItem = ({movie,onMovieClick}) => {
     return (
-        <div className="movie-item item " onClick={()=>onMovieClick(movie)}>
-            <div className="ui image">
-                {/* <img src={movie.imageUrl}/> */}
+        <div   className="movie-item ui card " onClick={()=>onMovieClick(movie)}>
+            <div className="image">
+                <img style={{height:'300px'}} src={movie.imageUrl}/>
             </div>
             <div className="content">
                 <div className="header">
@@ -14,12 +14,12 @@ const MovieItem = ({movie,onMovieClick}) => {
                 <div className="meta">
                     {movie.category}
                 </div>
-                <div className="description">
-                   <p> {movie.episode.length} tập </p>
-                </div>
+            </div>
+            <div class="extra content">
+                <i className="video icon"></i>
+                {movie.episode.length} tập
             </div>
         </div>
     )
 }
-
 export default MovieItem;
