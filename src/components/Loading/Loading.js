@@ -2,8 +2,8 @@ import React from 'react';
 
 const Loading = ({message}) => {
     return (
-        <div class="ui active dimmer" style={{height:'800px'}}>
-            <div class="ui text loader">{message}</div>
+        <div className="ui active dimmer">
+            <div className="ui text loader">{message}</div>
         </div>
     )
 };

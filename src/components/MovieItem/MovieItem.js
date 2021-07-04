@@ -2,8 +2,12 @@ import React from 'react';
 import './Style.css';
 
 const MovieItem = ({movie,onMovieClick}) => {
+const onClick=()=>{
+    onMovieClick(movie);
+    window.scrollTo(0,0)
+}
     return (
-        <div   className="movie-item ui card " onClick={()=>onMovieClick(movie)}>
+        <div   className="movie-item ui card " onClick={onClick}>
             <div className="image">
                 <img alt="ảnh" style={{height:'300px'}} src={movie.imageUrl}/>
             </div>
@@ -15,7 +19,7 @@ const MovieItem = ({movie,onMovieClick}) => {
                     {movie.category}
                 </div>
             </div>
-            <div class="extra content">
+            <div className="extra content">
                 <i className="video icon"></i>
                 {movie.episode.length} tập
             </div>

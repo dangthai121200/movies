@@ -5,17 +5,21 @@ import './Style.css';
 const ListMovies = ({ListMovies,onMovieClick}) => {
 
     const renderedListMovie=ListMovies?ListMovies.map(movie=>{
-        return <MovieItem movie={movie} onMovieClick={onMovieClick} />
+        return <MovieItem key={movie.url} movie={movie} onMovieClick={onMovieClick} />
     }):null
-    const renderedLoading=ListMovies?'':<Loading message="Đang tải phim!"/>
-
+    const renderedLoading=ListMovies?
+    (
+    <div className="ui piled segment ">
+        <div className="ui divided list movie-list">
+            {renderedListMovie}
+        </div>
+    </div>
+    ):<Loading message="Đang tải phim!"/>
     return (
-            <div className="ui piled segment ">
-                {renderedLoading}
-                <div className="ui divided list movie-list">
-                    {renderedListMovie}
-                </div>
-            </div>
+        <div>
+            {renderedLoading}     
+        </div>
+            
     )
 }
 
