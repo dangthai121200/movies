@@ -5,7 +5,6 @@ const SlideItem = ({movie}) => {
         return (
             <div className="item-img">
                     <img  alt="ảnh" src={movie.imageUrl}/>
-
             </div>
         ) 
     }else{
