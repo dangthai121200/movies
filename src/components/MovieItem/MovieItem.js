@@ -1,10 +1,11 @@
 import React from 'react';
 import './Style.css';
 
-const MovieItem = ({movie,onMovieClick}) => {
+const MovieItem = ({movie,onMovieClick,onCurenClick}) => {
 const onClick=()=>{
+    onCurenClick(false);
     onMovieClick(movie);
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
 }
     return (
         <div   className="movie-item ui card " onClick={onClick}>
@@ -15,7 +16,7 @@ const onClick=()=>{
                 <div className="header">
                     {movie.title}
                 </div>
-                <div className="meta">
+                <div className="meta content">
                     {movie.category}
                 </div>
             </div>

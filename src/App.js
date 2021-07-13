@@ -4,6 +4,7 @@ import ListMovies from './components/ListMovies/ListMovies';
 import VideoDetail from './components/VideoDetail/VideoDetail';
 import MenuBar from './components/MenuBar/MenuBar';
 import SlideBar from './components/SlideBar/SlideBar';
+import InformationMovie from './components/IformationMovie/InformationMovie';
 
 const categoryList=[
     {category:'Phim bộ',list:null},
@@ -17,6 +18,7 @@ const App = () => {
     const movies=useMovies();
     const [movie,setSelectMovie]=useState(null);  
     const[categorymovie,setCategoryMovie]=useState(null);
+    const[current,setCurrent]=useState(false)
 
         useEffect(()=>{
             if(!categorymovie){
@@ -50,9 +52,15 @@ const App = () => {
     return (         
             <div>      
                 <MenuBar onChangeCategory={setCategoryMovie} listcategory={categoryList}/>
-                <SlideBar listmovie={listSlideShow}/>
-                <VideoDetail movie={movie}/>
-                <ListMovies ListMovies={categorymovie} onMovieClick={setSelectMovie} />
+                {movie?
+                    current?
+                    <VideoDetail movie={movie}/>:<InformationMovie onClick={setCurrent} movie={movie}/>
+                :<SlideBar listmovie={listSlideShow}/>}   
+
+
+                <div className="ui piled segment">
+                    <ListMovies ListMovies={categorymovie} onMovieClick={setSelectMovie} onCurenClick={setCurrent} />
+                </div>         
             </div>
 
     )
